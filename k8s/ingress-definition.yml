@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: tanzu-oyo-ingress
+  namespace: default
+  labels:
+    app: tanzu-oyo
+    type: front-end
+spec:
+  rules:
+  - host: tanzu-oyo.apps.tkg.homelab.com
+    http:
+      paths:
+      - path: /hello
+        backend:
+          serviceName: tanzu-oyo-service
+          servicePort: 80

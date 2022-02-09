@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: tanzu-oyo-rs
+  labels:
+    app: tanzu-oyo
+    type: front-end
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tanzu-oyo
+  template:
+    metadata:
+      labels:
+        app: tanzu-oyo
+    spec:
+      containers:
+      - name: tanzu-oyo-container
+        image: 192.168.20.3/ns1/tanzu-oyo:latest
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+      imagePullSecrets:
+      - name: ns1-default-image-pull-secret

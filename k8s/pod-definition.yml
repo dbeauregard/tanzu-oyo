@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tanzu-oyo-pod
+  labels:
+    app: tanzu-oyo
+    type: front-end
+
+spec:
+  containers:
+  - name: tanzu-oyo-container
+    image: 192.168.20.3/ns1/tanzu-oyo:latest
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+  imagePullSecrets:
+  - name: ns1-default-image-pull-secret
