@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   name: tanzu-oyo-rs
+  namespace: default
   labels:
     app: tanzu-oyo
     type: front-end
@@ -18,9 +19,8 @@ spec:
     spec:
       containers:
       - name: tanzu-oyo-container
-        image: 192.168.20.3/ns1/tanzu-oyo:latest
+        image: gcr.io/fe-dbeauregard/tanzu-oyo:latest
         ports:
-        - containerPort: 8080
+        - name: web-port
+          containerPort: 8080
           protocol: TCP
-      imagePullSecrets:
-      - name: ns1-default-image-pull-secret

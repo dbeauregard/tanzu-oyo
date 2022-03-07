@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: tanzu-oyo-ingress
@@ -8,10 +8,13 @@ metadata:
     type: front-end
 spec:
   rules:
-  - host: tanzu-oyo.apps.tkg.homelab.com
-    http:
-      paths:
-      - path: /hello
-        backend:
-          serviceName: tanzu-oyo-service
-          servicePort: 80
+    - host: "oyo.tkg.homelab.com"
+      http:
+        paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: tanzu-oyo-service
+              port:
+                number: 88

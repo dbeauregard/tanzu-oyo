@@ -1,7 +1,8 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: tanzu-oyo-pod
+  name: tanzu-oyo-static-pod
+  namespace: default
   labels:
     app: tanzu-oyo
     type: front-end
@@ -9,9 +10,11 @@ metadata:
 spec:
   containers:
   - name: tanzu-oyo-container
-    image: 192.168.20.3/ns1/tanzu-oyo:latest
+#    image: 192.168.20.3/ns1/tanzu-oyo:latest
+    image: gcr.io/fe-dbeauregard/tanzu-oyo:latest
     ports:
-    - containerPort: 8080
+    - name: web-port
+      containerPort: 8080
       protocol: TCP
-  imagePullSecrets:
-  - name: ns1-default-image-pull-secret
+#  imagePullSecrets:
+#  - name: ns1-default-image-pull-secret

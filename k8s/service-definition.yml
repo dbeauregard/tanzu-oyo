@@ -8,12 +8,12 @@ metadata:
     type: front-end
 spec:
   # ClusterIP, NodePort, LoadBalancer, ExternalName
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - port: 88
     targetPort: 8080
     protocol: TCP
-    nodePort: 30007
+#    nodePort: 30007
   selector:
     app: tanzu-oyo
     type: front-end
