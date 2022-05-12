@@ -1,0 +1,16 @@
+#not sure when used
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: tanzuoyo-pv
+  namespace: default
+  labels:
+    type: vsphere
+spec:
+  accessModes:
+    - ReadWriteMany
+  capacity:
+    storage: 1Gi
+  storageClassName: default
+  volumeMode: Filesystem
+  persistentVolumeReclaimPolicy: Delete

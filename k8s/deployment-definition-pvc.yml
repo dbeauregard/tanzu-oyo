@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tanzu-oyo-deployment
+  namespace: default
+  labels:
+    app: tanzu-oyo
+    type: front-end
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tanzu-oyo
+      type: front-end
+  template:
+    metadata:
+      name: tanzu-oyo-pod
+      labels:
+        app: tanzu-oyo
+        type: front-end
+    spec:
+      containers:
+      - name: tanzu-oyo-container
+        image: gcr.io/fe-dbeauregard/tanzu-oyo:latest
+        ports:
+        - name: web-port
+          containerPort: 8080
+          protocol: TCP
+        volumeMounts:
+        - name: tanzuoyo-persistent-storage
+          mountPath: /var/lib/tanzuoyo
+      volumes:
+      - name: tanzuoyo-persistent-storage
+        persistentVolumeClaim:
+          claimName: tanzuoyo-pvc
