@@ -7,9 +7,8 @@ metadata:
     type: vsphere
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 1Gi
-#  storageClassName: ""
-#  volumeMode: Filesystem
+      storage: 50Mi
+  storageClassName: "" # None.  Blank is default
