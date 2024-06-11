@@ -1,0 +1,28 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  creationTimestamp: null
+  name: tanzu-oyo.apps.local.20240611.2002.19043
+spec:
+  refName: tanzu-oyo.apps.local
+  releasedAt: "2024-06-11T20:03:31Z"
+  template:
+    spec:
+      deploy:
+      - kapp:
+          rawOptions:
+          - --wait=false
+      fetch:
+      - imgpkgBundle:
+          image: public.ecr.aws/x9c3d7r8/tp4k8s@sha256:8c3e870d2a30213c1b3665fc0f61fdd389aca10c566e2486fc8fcdb77ba8eba7
+      template:
+      - ytt:
+          paths:
+          - config/
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+  valuesSchema:
+    openAPIv3: null
+  version: 20240611.2002.19043
