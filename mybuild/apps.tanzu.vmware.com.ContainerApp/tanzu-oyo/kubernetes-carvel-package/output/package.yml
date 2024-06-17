@@ -2,10 +2,10 @@ apiVersion: data.packaging.carvel.dev/v1alpha1
 kind: Package
 metadata:
   creationTimestamp: null
-  name: tanzu-oyo.apps.local.20240611.2002.19043
+  name: tanzu-oyo.apps.local.20240617.1528.46459
 spec:
   refName: tanzu-oyo.apps.local
-  releasedAt: "2024-06-11T20:03:31Z"
+  releasedAt: "2024-06-17T15:29:59Z"
   template:
     spec:
       deploy:
@@ -14,7 +14,7 @@ spec:
           - --wait=false
       fetch:
       - imgpkgBundle:
-          image: public.ecr.aws/x9c3d7r8/tp4k8s@sha256:8c3e870d2a30213c1b3665fc0f61fdd389aca10c566e2486fc8fcdb77ba8eba7
+          image: public.ecr.aws/x9c3d7r8/tp4k8s@sha256:d40386623a6ce5cddaf2c12c8b24464ecdda3c038a382d32010a9f2880424ef2
       template:
       - ytt:
           paths:
@@ -25,4 +25,4 @@ spec:
           - '-'
   valuesSchema:
     openAPIv3: null
-  version: 20240611.2002.19043
+  version: 20240617.1528.46459

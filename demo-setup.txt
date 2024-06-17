@@ -1,0 +1,10 @@
+1) login to tanzu CLI
+2) export AWS credentials
+3) aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/x9c3d7r8
+4) tanzu build --output-dir ./mybuild
+5) tanzu deploy --from-build ./mybuild
+
+Other window
+1) cd downloads
+2) export KUBECONFIG=KUBECONFIG=kubeconfig-eks.dbeauregard-tpk8s-eks.us-west-2.dbeauregard-tpk8s-eks1.yml
+3) 

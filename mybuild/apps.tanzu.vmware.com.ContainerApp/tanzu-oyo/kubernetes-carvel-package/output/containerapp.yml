@@ -6,13 +6,13 @@ metadata:
   name: tanzu-oyo
 spec:
   content:
-    buildTimestamp: "2024-06-11T20:02:19Z"
-    gitCommit: 7d976c85eb6588945efac007c3f31d6912108be5-dirty
+    buildTimestamp: "2024-06-17T15:28:46Z"
+    gitCommit: 2ed0ff3950285fbe403127cbb41b0a24bec6dfad-dirty
     gitURL: github.com/dbeauregard/tanzu-oyo.git
     packageRefName: tanzu-oyo.apps.local
-    summary: git:7d976c8 @ 2024-06-11T20:02:19Z
-    version: 20240611.2002.19043
-  image: public.ecr.aws/x9c3d7r8/tp4k8s@sha256:cdd30dcdc8fe29d189576262c39b68dcad7f4e89a841968574ece6d23a2e15d8
+    summary: git:2ed0ff3 @ 2024-06-17T15:28:46Z
+    version: 20240617.1528.46459
+  image: public.ecr.aws/x9c3d7r8/tp4k8s@sha256:30136ff13dbab32c8348daefc226e39c9bda1fd14759ba474d22f6827efd7ec6
   nonSecretEnv:
   - name: JAVA_TOOL_OPTIONS
     value: -Dmanagement.endpoint.health.probes.add-additional-paths=true -Dmanagement.health.probes.enabled=true
@@ -69,7 +69,7 @@ spec:
   - apiGroup: data.packaging.carvel.dev
     for: kubernetes.delete
     kind: Package
-    name: tanzu-oyo.apps.local.20240611.2002.19043
+    name: tanzu-oyo.apps.local.20240617.1528.46459
   - for: kubernetes.delete
     kind: Secret
     name: tanzu-oyo-values

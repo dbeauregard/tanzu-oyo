@@ -6,9 +6,6 @@ plugins {
 
 group = 'io.pivotal.dbeauregard.oyo'
 version = '0.0.1-SNAPSHOT'
-// sourceCompatibility = '11'
-// compileJava.options.fork = true
-// compileJava.options.forkOptions.executable = '/opt/homebrew/opt/openjdk@11/bin/javac'
 
 java {
   toolchain {
@@ -22,7 +19,6 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	// implementation 'org.springframework.boot:spring-boot-starter-cloud-connectors'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'

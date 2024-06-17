@@ -4,6 +4,7 @@
 .settings
 bin
 build
+mybuild
 
 # Compiled class file
 *.class
